@@ -15,13 +15,13 @@ export default {
         sans: ['Roboto', 'sans-serif'],
       },
       keyframes: {
-        rotateY: {
-          '0%': { transform: 'rotateY(0deg)' },
-          '100%': { transform: 'rotateY(360deg)' },
+        marquee: {
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-50%)' },
         }
       },
       animation: {
-        'spin-slow-y': 'rotateY 20s linear infinite',
+        'marquee': 'marquee 40s linear infinite',
       }
     },
   },

@@ -1,0 +1,97 @@
+---
+import ServiceCard from './ui/ServiceCard.astro';
+---
+
+<!-- SERVICES MARQUEE SECTION: What We Do -->
+<section id="solutions" class="py-24 bg-brand-navy overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
+    <div class="text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-brand-white mb-4"><span data-i18n="srv-title">WHAT WE <span class="text-brand-orange">DO</span></span></h2>
+      <div class="h-1 w-20 bg-brand-orange mx-auto"></div>
+    </div>
+  </div>
+
+  <!-- CONTENEDOR MARQUEE -->
+  <!-- NOTE: w-[200%] o flex-shrink-0 asegura que el contenido no se comprima y se desplace suavemente -->
+  <div class="relative w-full overflow-hidden flex items-center">
+    <!-- El contenedor que se anima moviendose al -50% -->
+    <div class="flex animate-marquee hover:[animation-play-state:paused] w-max gap-6 px-3">
+      
+      <!-- SET ORIGINAL (5 tarjetas) -->
+      <div class="w-[300px] sm:w-[350px] flex-shrink-0">
+        <ServiceCard 
+          title="Engineering" data-i18n-title="srv-1-t" 
+          description="Comprehensive electrical and mechanical engineering design for power plants." data-i18n-desc="srv-1-d"
+          imageSrc="/images/referencia.jpeg"
+        />
+      </div>
+      <div class="w-[300px] sm:w-[350px] flex-shrink-0">
+        <ServiceCard 
+          title="Integration" data-i18n-title="srv-2-t" 
+          description="Seamless integration of power systems into existing infrastructure." data-i18n-desc="srv-2-d"
+          imageSrc="/images/referencia.jpeg"
+        />
+      </div>
+      <div class="w-[300px] sm:w-[350px] flex-shrink-0">
+        <ServiceCard 
+          title="Commissioning" data-i18n-title="srv-3-t" 
+          description="Rigorous testing and commissioning to ensure optimal performance." data-i18n-desc="srv-3-d"
+          imageSrc="/images/referencia.jpeg"
+        />
+      </div>
+      <div class="w-[300px] sm:w-[350px] flex-shrink-0">
+        <ServiceCard 
+          title="Rental" data-i18n-title="srv-4-t" 
+          description="Industrial generator rental ready for rapid deployment." data-i18n-desc="srv-4-d"
+          imageSrc="/images/7.jpeg"
+        />
+      </div>
+      <div class="w-[300px] sm:w-[350px] flex-shrink-0">
+        <ServiceCard 
+          title="Maintenance" data-i18n-title="srv-5-t" 
+          description="Scheduled maintenance and emergency support round the clock." data-i18n-desc="srv-5-d"
+          imageSrc="/images/referencia.jpeg"
+        />
+      </div>
+
+      <!-- SET DUPLICADO (Para el bucle infinito perfecto) -->
+      <!-- NOTE: Los atributos data-i18n deben funcionar igual porque el script agarra todos por selector -->
+      <div class="w-[300px] sm:w-[350px] flex-shrink-0">
+        <ServiceCard 
+          title="Engineering" data-i18n-title="srv-1-t" 
+          description="Comprehensive electrical and mechanical engineering design for power plants." data-i18n-desc="srv-1-d"
+          imageSrc="/images/referencia.jpeg"
+        />
+      </div>
+      <div class="w-[300px] sm:w-[350px] flex-shrink-0">
+        <ServiceCard 
+          title="Integration" data-i18n-title="srv-2-t" 
+          description="Seamless integration of power systems into existing infrastructure." data-i18n-desc="srv-2-d"
+          imageSrc="/images/referencia.jpeg"
+        />
+      </div>
+      <div class="w-[300px] sm:w-[350px] flex-shrink-0">
+        <ServiceCard 
+          title="Commissioning" data-i18n-title="srv-3-t" 
+          description="Rigorous testing and commissioning to ensure optimal performance." data-i18n-desc="srv-3-d"
+          imageSrc="/images/referencia.jpeg"
+        />
+      </div>
+      <div class="w-[300px] sm:w-[350px] flex-shrink-0">
+        <ServiceCard 
+          title="Rental" data-i18n-title="srv-4-t" 
+          description="Industrial generator rental ready for rapid deployment." data-i18n-desc="srv-4-d"
+          imageSrc="/images/7.jpeg"
+        />
+      </div>
+      <div class="w-[300px] sm:w-[350px] flex-shrink-0">
+        <ServiceCard 
+          title="Maintenance" data-i18n-title="srv-5-t" 
+          description="Scheduled maintenance and emergency support round the clock." data-i18n-desc="srv-5-d"
+          imageSrc="/images/referencia.jpeg"
+        />
+      </div>
+      
+    </div>
+  </div>
+</section>
