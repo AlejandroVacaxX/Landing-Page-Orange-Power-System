@@ -112,12 +112,15 @@
   const closeBtn = document.getElementById('close-contact-modal');
   const modal = document.getElementById('contact-modal') as HTMLDialogElement;
 
-  if (openBtn && closeBtn && modal) {
-    openBtn.addEventListener('click', function() {
+  const extraBtns = document.querySelectorAll('.btn-open-contact');
+  if (closeBtn && modal) {
+    const openModal = () => {
       if (typeof modal.showModal === 'function') {
         modal.showModal();
       }
-    });
+    };
+    if (openBtn) openBtn.addEventListener('click', openModal);
+    extraBtns.forEach(btn => btn.addEventListener('click', openModal));
 
     closeBtn.addEventListener('click', function() {
       if (typeof modal.close === 'function') {
