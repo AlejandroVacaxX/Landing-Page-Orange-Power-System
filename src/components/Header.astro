@@ -69,6 +69,7 @@ import Button from './ui/Button.astro';
   
   let currentLang = 'en';
 
+ window.updateTranslationsGlobally = updateTranslations;
  function updateTranslations(lang: "en" | "es") {
     const t = translations as Record<string, Record<string, string>>;
 

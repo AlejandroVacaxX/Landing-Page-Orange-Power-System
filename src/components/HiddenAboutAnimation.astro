@@ -1,47 +1,74 @@
 ---
 ---
-<section id="hidden-about-section" class="hidden relative w-full h-[500vh] bg-brand-navy">
-  <div class="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center pointer-events-none" id="hidden-about-sticky">
+<section id="hidden-about-section" class="fixed inset-0 z-[100] bg-[#0B1220] overflow-y-auto hidden opacity-0 transition-opacity duration-500">
+  
+  <!-- Boton de Cierre -->
+  <button id="close-hidden-about" class="fixed top-6 right-6 md:top-10 md:right-10 z-[110] text-brand-light hover:text-brand-orange transition-colors focus:outline-none" aria-label="Close modal">
+    <svg class="w-10 h-10 md:w-12 md:h-12" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+
+  <!-- Estetica Premium: Fondo Ambiental y Glows -->
+  <div class="fixed inset-0 pointer-events-none z-0">
+    <!-- Patron de cuadricula sutil -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,#ffffff05_1px,transparent_1px),linear-gradient(to_bottom,#ffffff05_1px,transparent_1px)] bg-[size:40px_40px]"></div>
     
-    <!-- Contenedor central -->
-    <div class="relative w-full max-w-4xl h-full flex items-center justify-center p-4" id="hidden-about-container">
+    <!-- Halos de luz -->
+    <div class="absolute top-1/4 left-1/4 w-[30rem] h-[30rem] bg-brand-orange/10 rounded-full blur-3xl mix-blend-screen opacity-50"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-[40rem] h-[40rem] bg-brand-orange/10 rounded-full blur-3xl mix-blend-screen opacity-50"></div>
+  </div>
+
+  <!-- Track de Scroll Interno -->
+  <div class="relative w-full h-[400vh] z-10" id="modal-scroll-track">
+    <!-- Lienzo Sticky Central -->
+    <div class="sticky top-0 w-full h-screen flex items-center justify-center overflow-hidden">
       
-      <!-- Card 1 -->
-      <article class="gsap-scroll-card absolute w-full max-w-2xl bg-[#0B1220] border border-brand-light/10 shadow-2xl rounded-2xl p-8 md:p-12 opacity-0 transform-gpu" data-tx="-400" data-ty="300" data-rot="-15">
-        <h3 class="text-3xl md:text-4xl font-extrabold text-brand-orange mb-6 text-center"><span data-i18n="hid-mision-t">Our Mission</span></h3>
-        <p class="text-brand-light/90 text-lg leading-relaxed text-center"><span data-i18n="hid-mision-d">...</span></p>
-      </article>
+      <div class="relative w-full max-w-6xl mx-auto px-4 lg:px-8 h-full flex items-center justify-center">
+        
+        <!-- SLIDE 1 (Mision y Vision) -->
+        <div class="gsap-slide absolute w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 opacity-0 transform-gpu" data-tx="-200" data-ty="300" data-rot="-5">
+          <!-- Card 1 -->
+          <article class="bg-[#050810]/90 backdrop-blur-md border border-brand-light/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-3xl p-6 sm:p-10 flex flex-col justify-center">
+            <h3 class="text-2xl md:text-3xl font-extrabold text-brand-orange mb-6 text-center"><span data-i18n="hid-mision-t">Our Mission</span></h3>
+            <p class="text-brand-light/90 text-sm sm:text-base md:text-lg leading-relaxed text-center"><span data-i18n="hid-mision-d">Our mission is to create high-value technological solutions...</span></p>
+          </article>
+          <!-- Card 2 -->
+          <article class="bg-[#050810]/90 backdrop-blur-md border border-brand-light/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-3xl p-6 sm:p-10 flex flex-col justify-center mt-8 md:mt-0 md:translate-y-12">
+            <h3 class="text-2xl md:text-3xl font-extrabold text-brand-orange mb-6 text-center"><span data-i18n="hid-vision-t">Our Vision</span></h3>
+            <p class="text-brand-light/90 text-sm sm:text-base md:text-lg leading-relaxed text-center"><span data-i18n="hid-vision-d">Our goal is to transform the energy sector...</span></p>
+          </article>
+        </div>
 
-      <!-- Card 2 -->
-      <article class="gsap-scroll-card absolute w-full max-w-2xl bg-[#0B1220] border border-brand-light/10 shadow-2xl rounded-2xl p-8 md:p-12 opacity-0 transform-gpu" data-tx="400" data-ty="-300" data-rot="15">
-        <h3 class="text-3xl md:text-4xl font-extrabold text-brand-orange mb-6 text-center"><span data-i18n="hid-vision-t">Our Vision</span></h3>
-        <p class="text-brand-light/90 text-lg leading-relaxed text-center"><span data-i18n="hid-vision-d">...</span></p>
-      </article>
+        <!-- SLIDE 2 (Cobertura y Mexico) -->
+        <div class="gsap-slide absolute w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 opacity-0 transform-gpu" data-tx="300" data-ty="-200" data-rot="5">
+          <!-- Card 3 -->
+          <article class="bg-[#050810]/90 backdrop-blur-md border border-brand-light/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-3xl p-6 sm:p-10 flex flex-col justify-center">
+            <h3 class="text-2xl md:text-3xl font-extrabold text-brand-orange mb-6 text-center"><span data-i18n="hid-cob-t">Coverage</span></h3>
+            <p class="text-brand-light/90 text-sm sm:text-base md:text-lg leading-relaxed text-center"><span data-i18n="hid-cob-d">At Orange we are committed to providing high-quality energy solutions...</span></p>
+          </article>
+          <!-- Card 4 -->
+          <article class="bg-[#050810]/90 backdrop-blur-md border border-brand-light/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-3xl p-6 sm:p-10 flex flex-col justify-center mt-8 md:mt-0 md:-translate-y-12">
+            <h3 class="text-2xl md:text-3xl font-extrabold text-brand-orange mb-6 text-center"><span data-i18n="hid-mex-t">Mexico</span></h3>
+            <p class="text-brand-light/90 text-sm sm:text-base md:text-lg leading-relaxed text-center"><span data-i18n="hid-mex-d">Our presence in Mexico is solid and extensive...</span></p>
+          </article>
+        </div>
 
-      <!-- Card 3 -->
-      <article class="gsap-scroll-card absolute w-full max-w-2xl bg-[#0B1220] border border-brand-light/10 shadow-2xl rounded-2xl p-8 md:p-12 opacity-0 transform-gpu" data-tx="-300" data-ty="-400" data-rot="-10">
-        <h3 class="text-3xl md:text-4xl font-extrabold text-brand-orange mb-6 text-center"><span data-i18n="hid-cob-t">Coverage</span></h3>
-        <p class="text-brand-light/90 text-lg leading-relaxed text-center"><span data-i18n="hid-cob-d">...</span></p>
-      </article>
+        <!-- SLIDE 3 (Latinoamerica y Promesa) -->
+        <div class="gsap-slide absolute w-full grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 opacity-0 transform-gpu" data-tx="-100" data-ty="300" data-rot="-2">
+          <!-- Card 5 -->
+          <article class="bg-[#050810]/90 backdrop-blur-md border border-brand-light/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-3xl p-6 sm:p-10 flex flex-col justify-center">
+            <h3 class="text-2xl md:text-3xl font-extrabold text-brand-orange mb-6 text-center"><span data-i18n="hid-latam-t">Latin America</span></h3>
+            <p class="text-brand-light/90 text-sm sm:text-base md:text-lg leading-relaxed text-center"><span data-i18n="hid-latam-d">In addition to our reach in Mexico...</span></p>
+          </article>
+          <!-- Card 6 -->
+          <article class="bg-[#050810]/90 backdrop-blur-md border border-brand-light/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] rounded-3xl p-6 sm:p-10 flex flex-col justify-center mt-8 md:mt-0 md:translate-y-12">
+            <h3 class="text-2xl md:text-3xl font-extrabold text-brand-orange mb-6 text-center"><span data-i18n="hid-prom-t">Our Promise</span></h3>
+            <p class="text-brand-light/90 text-sm sm:text-base md:text-lg leading-relaxed text-center"><span data-i18n="hid-prom-d">No matter where you are, Orange Power Systems is dedicated...</span></p>
+          </article>
+        </div>
 
-      <!-- Card 4 -->
-      <article class="gsap-scroll-card absolute w-full max-w-2xl bg-[#0B1220] border border-brand-light/10 shadow-2xl rounded-2xl p-8 md:p-12 opacity-0 transform-gpu" data-tx="500" data-ty="200" data-rot="20">
-        <h3 class="text-3xl md:text-4xl font-extrabold text-brand-orange mb-6 text-center"><span data-i18n="hid-mex-t">Mexico</span></h3>
-        <p class="text-brand-light/90 text-base leading-relaxed text-center"><span data-i18n="hid-mex-d">...</span></p>
-      </article>
-
-      <!-- Card 5 -->
-      <article class="gsap-scroll-card absolute w-full max-w-2xl bg-[#0B1220] border border-brand-light/10 shadow-2xl rounded-2xl p-8 md:p-12 opacity-0 transform-gpu" data-tx="-400" data-ty="400" data-rot="-25">
-        <h3 class="text-3xl md:text-4xl font-extrabold text-brand-orange mb-6 text-center"><span data-i18n="hid-latam-t">Latin America</span></h3>
-        <p class="text-brand-light/90 text-base leading-relaxed text-center"><span data-i18n="hid-latam-d">...</span></p>
-      </article>
-
-      <!-- Card 6 -->
-      <article class="gsap-scroll-card absolute w-full max-w-2xl bg-[#0B1220] border border-brand-light/10 shadow-2xl rounded-2xl p-8 md:p-12 opacity-0 transform-gpu" data-tx="300" data-ty="-300" data-rot="10">
-        <h3 class="text-3xl md:text-4xl font-extrabold text-brand-orange mb-6 text-center"><span data-i18n="hid-prom-t">Our Promise</span></h3>
-        <p class="text-brand-light/90 text-lg leading-relaxed text-center"><span data-i18n="hid-prom-d">...</span></p>
-      </article>
-
+      </div>
     </div>
   </div>
 </section>
@@ -53,37 +80,39 @@
   gsap.registerPlugin(ScrollTrigger);
 
   const revealBtn = document.getElementById('btn-reveal-about');
-  const hiddenSection = document.getElementById('hidden-about-section');
-  const cards = document.querySelectorAll('.gsap-scroll-card');
-
-  // Configuración inicial de tarjetas (dispersas)
-  cards.forEach((card) => {
-    const el = card as HTMLElement;
-    const tx = el.getAttribute('data-tx') || '0';
-    const ty = el.getAttribute('data-ty') || '0';
-    const rot = el.getAttribute('data-rot') || '0';
-    gsap.set(el, { x: tx, y: ty, rotation: rot, scale: 0.5, opacity: 0 });
-  });
+  const closeBtn = document.getElementById('close-hidden-about');
+  const modal = document.getElementById('hidden-about-section');
+  const slides = document.querySelectorAll('.gsap-slide');
 
   let scrollTriggerInstance: ScrollTrigger | null = null;
 
-  function initAnimation() {
+  // Configuración inicial de dispersión
+  slides.forEach((slide) => {
+    const el = slide as HTMLElement;
+    const tx = el.getAttribute('data-tx') || '0';
+    const ty = el.getAttribute('data-ty') || '0';
+    const rot = el.getAttribute('data-rot') || '0';
+    gsap.set(el, { x: tx, y: ty, rotation: rot, scale: 0.6, opacity: 0 });
+  });
+
+  function initModalAnimation() {
     if (scrollTriggerInstance) {
       scrollTriggerInstance.kill();
     }
 
     const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: "#hidden-about-section",
+        trigger: "#modal-scroll-track",
+        scroller: "#hidden-about-section", // ESTO ES CRITICO PARA MODALES
         start: "top top",
         end: "bottom bottom",
-        scrub: 1, // suavizado nativo de gsap para acompañar a lenis
+        scrub: 1, // suavizado
       }
     });
 
-    cards.forEach((card, i) => {
-      // 1. Entra al centro
-      tl.to(card, {
+    slides.forEach((slide, i) => {
+      // 1. Entra al centro de la pantalla
+      tl.to(slide, {
         x: 0,
         y: 0,
         rotation: 0,
@@ -93,21 +122,14 @@
         ease: "power2.out"
       });
 
-      // 2. Pausa para leer
-      tl.to(card, { opacity: 1, duration: 1.5 });
+      // 2. Pausa para lectura
+      tl.to(slide, { opacity: 1, duration: 1.5 });
 
-      // 3. Sale hacia arriba (excepto la ultima, que puede quedarse o salir normal)
-      if (i < cards.length - 1) {
-        tl.to(card, {
-          y: -200,
-          scale: 1.1,
-          opacity: 0,
-          duration: 1,
-          ease: "power2.in"
-        });
-      } else {
-        // La última se desvanece más sutilmente
-        tl.to(card, {
+      // 3. Sale difuminandose hacia atrás/arriba si no es el ultimo
+      if (i < slides.length - 1) {
+        tl.to(slide, {
+          y: -150,
+          scale: 0.8,
           opacity: 0,
           duration: 1,
           ease: "power2.in"
@@ -118,20 +140,51 @@
     scrollTriggerInstance = ScrollTrigger.getAll()[0];
   }
 
-  if (revealBtn && hiddenSection) {
-    revealBtn.addEventListener('click', () => {
-      // Remover clase hidden
-      hiddenSection.classList.remove('hidden');
-      hiddenSection.classList.add('block');
-      
-      // Inicializar / refrescar GSAP ahora que tiene layout
-      initAnimation();
-      ScrollTrigger.refresh();
+  function openModal() {
+    if (!modal) return;
+    
+    // Preparar UI
+    modal.classList.remove('hidden');
+    // Forzar reflow
+    void modal.offsetWidth;
+    modal.classList.remove('opacity-0');
+    modal.classList.add('opacity-100');
+    
+    // Bloquear scroll de la página de fondo
+    document.body.style.overflow = 'hidden';
+    
+    // Resetear scroll del modal a 0
+    modal.scrollTop = 0;
 
-      // Scroll hacia la sección
-      setTimeout(() => {
-        hiddenSection.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    });
+    // Inicializar animación y refrescar instancias GSAP con el nuevo scroller
+    initModalAnimation();
+    ScrollTrigger.refresh();
+    
+    // Disparar evento para forzar traducción
+    const currentLang = document.documentElement.lang || 'en';
+    if(window.updateTranslationsGlobally) window.updateTranslationsGlobally(currentLang);
+  }
+
+  function closeModal() {
+    if (!modal) return;
+    
+    modal.classList.remove('opacity-100');
+    modal.classList.add('opacity-0');
+    
+    setTimeout(() => {
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+      if (scrollTriggerInstance) {
+        scrollTriggerInstance.kill();
+      }
+    }, 500); // match duration-500
+  }
+
+  if (revealBtn) {
+    revealBtn.addEventListener('click', openModal);
+  }
+
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeModal);
   }
 </script>
