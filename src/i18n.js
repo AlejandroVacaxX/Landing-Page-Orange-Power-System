@@ -66,7 +66,7 @@ export const translations = {
     "ftr-s1": "Engineering",
     "ftr-s2": "Rentals",
     "ftr-s3": "Maintenance",
-    "ftr-copy": " Orange Power Systems. All rights reserved.",
+    "ftr-copy": "Copyright © 2024 OrangePS Powered by TCC",
     "ftr-p1": "Privacy Policy",
     "ftr-p2": "Terms of Service"
   },
@@ -137,7 +137,7 @@ export const translations = {
     "ftr-s1": "Ingenieria",
     "ftr-s2": "Alquileres",
     "ftr-s3": "Mantenimiento",
-    "ftr-copy": " Orange Power Systems. Todos los derechos reservados.",
+    "ftr-copy": "Copyright © 2024 OrangePS Powered by TCC",
     "ftr-p1": "Politica de Privacidad",
     "ftr-p2": "Terminos de Servicio"
   }
