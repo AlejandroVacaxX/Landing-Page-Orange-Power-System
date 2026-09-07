@@ -2,7 +2,7 @@ export const translations = {
   en: {
     "nav-sol": "SOLUTIONS",
     "nav-ind": "SERVICES",
-    "nav-pro": "PROJECTS",
+    "nav-pro": "PRODUCTS",
     "nav-abt": "ABOUT",
     "nav-btn": "CONTACT",
     
@@ -106,7 +106,7 @@ export const translations = {
   },
   es: {
     "nav-sol": "SOLUCIONES",
-    "nav-ind": "INDUSTRIAS",
+    "nav-srv": "SERVICIOS",
     "nav-pro": "PROYECTOS",
     "nav-abt": "NOSOTROS",
     "nav-btn": "CONTACTO",
