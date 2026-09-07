@@ -5,6 +5,13 @@ import Button from './ui/Button.astro';
 <!-- HERO SECTION: Contenido principal y metricas -->
 <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex flex-col justify-center min-h-[90vh]">
   
+  <!-- Imagen de Fondo -->
+  <div class="absolute inset-0 z-0">
+    <img src="/images/principal.jpg" alt="Orange Power Systems - Main" class="w-full h-full object-cover opacity-60" />
+    <div class="absolute inset-0 bg-[#0B1220]/70 mix-blend-multiply"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/80 to-transparent"></div>
+  </div>
+
   <!-- CONTENIDO PRINCIPAL -->
   <!-- NOTE: z-10 para mantener el texto por encima del overlay -->
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-grow flex flex-col justify-center">

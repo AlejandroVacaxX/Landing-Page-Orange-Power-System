@@ -1,7 +1,7 @@
 export const translations = {
   en: {
     "nav-sol": "SOLUTIONS",
-    "nav-ind": "INDUSTRIES",
+    "nav-ind": "SERVICES",
     "nav-pro": "PROJECTS",
     "nav-abt": "ABOUT",
     "nav-btn": "CONTACT",
