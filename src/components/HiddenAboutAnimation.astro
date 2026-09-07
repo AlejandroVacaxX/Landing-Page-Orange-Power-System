@@ -1,0 +1,132 @@
+---
+---
+<section id="hidden-about-section" class="hidden relative w-full h-[300vh] bg-[#000000]">
+  <div class="sticky top-0 w-full h-screen overflow-hidden flex items-center justify-center pointer-events-none">
+    
+    <!-- Contenedor central -->
+    <div class="relative w-full max-w-4xl h-full flex items-center justify-center p-4 perspective-1000">
+      
+      <!-- Card 1 -->
+      <article class="scroll-card absolute w-full max-w-2xl bg-[#0B1220] border border-brand-light/10 shadow-2xl rounded-2xl p-8 md:p-12 transition-transform opacity-0" data-tx="-200" data-ty="300" data-index="0">
+        <h3 class="text-3xl md:text-4xl font-extrabold text-brand-orange mb-6 text-center"><span data-i18n="hid-mision-t">Our Mission</span></h3>
+        <p class="text-brand-light/90 text-lg leading-relaxed text-center"><span data-i18n="hid-mision-d">...</span></p>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="scroll-card absolute w-full max-w-2xl bg-[#0B1220] border border-brand-light/10 shadow-2xl rounded-2xl p-8 md:p-12 transition-transform opacity-0" data-tx="200" data-ty="-300" data-index="1">
+        <h3 class="text-3xl md:text-4xl font-extrabold text-brand-orange mb-6 text-center"><span data-i18n="hid-vision-t">Our Vision</span></h3>
+        <p class="text-brand-light/90 text-lg leading-relaxed text-center"><span data-i18n="hid-vision-d">...</span></p>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="scroll-card absolute w-full max-w-2xl bg-[#0B1220] border border-brand-light/10 shadow-2xl rounded-2xl p-8 md:p-12 transition-transform opacity-0" data-tx="-300" data-ty="-100" data-index="2">
+        <h3 class="text-3xl md:text-4xl font-extrabold text-brand-orange mb-6 text-center"><span data-i18n="hid-cob-t">Coverage</span></h3>
+        <p class="text-brand-light/90 text-lg leading-relaxed text-center"><span data-i18n="hid-cob-d">...</span></p>
+      </article>
+
+      <!-- Card 4 -->
+      <article class="scroll-card absolute w-full max-w-2xl bg-[#0B1220] border border-brand-light/10 shadow-2xl rounded-2xl p-8 md:p-12 transition-transform opacity-0" data-tx="300" data-ty="100" data-index="3">
+        <h3 class="text-3xl md:text-4xl font-extrabold text-brand-orange mb-6 text-center"><span data-i18n="hid-mex-t">Mexico</span></h3>
+        <p class="text-brand-light/90 text-base leading-relaxed text-center"><span data-i18n="hid-mex-d">...</span></p>
+      </article>
+
+      <!-- Card 5 -->
+      <article class="scroll-card absolute w-full max-w-2xl bg-[#0B1220] border border-brand-light/10 shadow-2xl rounded-2xl p-8 md:p-12 transition-transform opacity-0" data-tx="-100" data-ty="300" data-index="4">
+        <h3 class="text-3xl md:text-4xl font-extrabold text-brand-orange mb-6 text-center"><span data-i18n="hid-latam-t">Latin America</span></h3>
+        <p class="text-brand-light/90 text-base leading-relaxed text-center"><span data-i18n="hid-latam-d">...</span></p>
+      </article>
+
+      <!-- Card 6 -->
+      <article class="scroll-card absolute w-full max-w-2xl bg-[#0B1220] border border-brand-light/10 shadow-2xl rounded-2xl p-8 md:p-12 transition-transform opacity-0" data-tx="100" data-ty="-300" data-index="5">
+        <h3 class="text-3xl md:text-4xl font-extrabold text-brand-orange mb-6 text-center"><span data-i18n="hid-prom-t">Our Promise</span></h3>
+        <p class="text-brand-light/90 text-lg leading-relaxed text-center"><span data-i18n="hid-prom-d">...</span></p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const revealBtn = document.getElementById('btn-reveal-about');
+  const hiddenSection = document.getElementById('hidden-about-section');
+  const cards = document.querySelectorAll('.scroll-card');
+
+  if (revealBtn && hiddenSection) {
+    revealBtn.addEventListener('click', () => {
+      // Remover clase hidden
+      hiddenSection.classList.remove('hidden');
+      hiddenSection.classList.add('block');
+      
+      // Scroll hacia la sección
+      hiddenSection.scrollIntoView({ behavior: 'smooth' });
+    });
+  }
+
+  // Lógica de Scroll-Linked Convergence
+  window.addEventListener('scroll', () => {
+    if (!hiddenSection || hiddenSection.classList.contains('hidden')) return;
+    
+    const rect = hiddenSection.getBoundingClientRect();
+    const sectionTop = rect.top;
+    const sectionHeight = rect.height;
+    const windowHeight = window.innerHeight;
+    
+    // Progreso total de la sección (0 a 1)
+    let progress = -sectionTop / (sectionHeight - windowHeight);
+    
+    // Limitar progreso entre 0 y 1
+    if (progress < 0) progress = 0;
+    if (progress > 1) progress = 1;
+
+    const totalCards = cards.length;
+    
+    cards.forEach((card) => {
+      const el = card as HTMLElement;
+      const index = parseInt(el.getAttribute('data-index') || '0');
+      const tx = parseInt(el.getAttribute('data-tx') || '0');
+      const ty = parseInt(el.getAttribute('data-ty') || '0');
+
+      // Calcular el progreso local de esta tarjeta
+      // Queremos que cada tarjeta tenga su pico en un momento específico
+      const peak = index / (totalCards - 1); // 0, 0.2, 0.4, 0.6, 0.8, 1.0
+      const windowWidth = 1 / totalCards; // Ancho de la ventana de visibilidad
+      
+      const dist = progress - peak;
+      
+      if (dist < -windowWidth) {
+        // Aún no llega: disperso
+        el.style.transform = `translate(${tx}px, ${ty}px) scale(0.5)`;
+        el.style.opacity = '0';
+      } else if (dist > windowWidth) {
+        // Ya pasó: sale hacia arriba
+        el.style.transform = `translate(0px, -200px) scale(1.1)`;
+        el.style.opacity = '0';
+      } else {
+        // En progreso: interpolar hacia el centro y hacer opaco
+        // normalizeDist: -1 to 1
+        const nDist = dist / windowWidth; 
+        
+        let currentTx = 0;
+        let currentTy = 0;
+        let scale = 1;
+        let opacity = 1;
+
+        if (nDist < 0) {
+          // Entrando
+          currentTx = tx * Math.abs(nDist);
+          currentTy = ty * Math.abs(nDist);
+          scale = 1 - (0.5 * Math.abs(nDist));
+          opacity = 1 - Math.abs(nDist);
+        } else {
+          // Saliendo hacia arriba
+          currentTy = -200 * nDist;
+          scale = 1 + (0.1 * nDist);
+          opacity = 1 - nDist;
+        }
+
+        el.style.transform = `translate(${currentTx}px, ${currentTy}px) scale(${scale})`;
+        el.style.opacity = opacity.toString();
+      }
+    });
+  });
+</script>
