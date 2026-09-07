@@ -1,0 +1,63 @@
+---
+import ProductCard from './ui/ProductCard.astro';
+---
+
+<!-- PRODUCTS GRID SECTION -->
+<section id="products" class="py-24 bg-brand-navy border-t border-brand-light/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-brand-light mb-4">
+        <span data-i18n="prod-title">Our products</span>
+      </h2>
+      <div class="h-1 w-20 bg-brand-orange mx-auto"></div>
+    </div>
+
+    <!-- GRID DE PRODUCTOS -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+      
+      <ProductCard 
+        title="Asset Control Panels" data-i18n-title="prod-1-t" 
+        description="Centralized management of various energy sources." data-i18n-desc="prod-1-d"
+        imageSrc="/images/referencia.jpeg"
+        data-i18n-btn="prod-btn"
+      />
+      
+      <ProductCard 
+        title="Synchronization Panels" data-i18n-title="prod-2-t" 
+        description="Control and power for centralized generator management." data-i18n-desc="prod-2-d"
+        imageSrc="/images/referencia.jpeg"
+        data-i18n-btn="prod-btn"
+      />
+      
+      <ProductCard 
+        title="Transfer Switch Panels" data-i18n-title="prod-3-t" 
+        description="Automatic transfer units for switching energy sources." data-i18n-desc="prod-3-d"
+        imageSrc="/images/referencia.jpeg"
+        data-i18n-btn="prod-btn"
+      />
+      
+      <ProductCard 
+        title="Power and Control Panels" data-i18n-title="prod-4-t" 
+        description="Management of switching between local energy sources and the commercial grid." data-i18n-desc="prod-4-d"
+        imageSrc="/images/referencia.jpeg"
+        data-i18n-btn="prod-btn"
+      />
+      
+      <ProductCard 
+        title="Generator Rental" data-i18n-title="prod-5-t" 
+        description="Power generation equipment for temporary needs." data-i18n-desc="prod-5-d"
+        imageSrc="/images/referencia.jpeg"
+        data-i18n-btn="prod-btn"
+      />
+      
+      <ProductCard 
+        title="Specialized Technical Support" data-i18n-title="prod-6-t" 
+        description="Technical assistance for the operation and management of generation systems." data-i18n-desc="prod-6-d"
+        imageSrc="/images/referencia.jpeg"
+        data-i18n-btn="prod-btn"
+      />
+
+    </div>
+  </div>
+</section>

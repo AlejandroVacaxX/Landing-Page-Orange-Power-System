@@ -1,0 +1,44 @@
+---
+export interface Props {
+  title: string;
+  description: string;
+  imageSrc: string;
+  'data-i18n-title'?: string;
+  'data-i18n-desc'?: string;
+  'data-i18n-btn'?: string;
+}
+
+const { title, description, imageSrc, 'data-i18n-title': dataI18nTitle, 'data-i18n-desc': dataI18nDesc, 'data-i18n-btn': dataI18nBtn } = Astro.props;
+---
+
+<article class="flex flex-col bg-brand-navy border border-brand-light/10 rounded-xl overflow-hidden h-full">
+  <!-- Imagen Superior -->
+  <div class="relative w-full h-48 sm:h-56">
+    <img 
+      src={imageSrc} 
+      alt={title} 
+      class="w-full h-full object-cover" 
+    />
+  </div>
+  
+  <!-- Cuerpo de la Tarjeta -->
+  <div class="p-6 flex flex-col flex-grow">
+    <!-- Título del Producto (Naranja Corporativo) -->
+    <h3 class="text-xl font-bold text-brand-orange mb-3">
+      <span data-i18n={dataI18nTitle}>{title}</span>
+    </h3>
+    
+    <!-- Descripción -->
+    <p class="text-sm text-brand-light/80 mb-6 flex-grow">
+      <span data-i18n={dataI18nDesc}>{description}</span>
+    </p>
+    
+    <!-- Separador -->
+    <hr class="border-brand-light/20 mb-6" />
+    
+    <!-- Botón CTA -->
+    <button class="w-full py-3 px-4 border border-brand-light/20 text-brand-light font-semibold rounded hover:bg-brand-light/10 transition-colors duration-300">
+      <span data-i18n={dataI18nBtn}>More information</span>
+    </button>
+  </div>
+</article>

@@ -19,7 +19,7 @@ export const translations = {
     "hero-m4-v": "15 YRS",
     "hero-m4-t": "Industry Experience",
 
-    "srv-title": "WHAT WE <span class=\"text-brand-orange\">DO</span>",
+    "srv-title": "OUR <span class=\"text-brand-orange\">EXPERIENCE</span>",
     "srv-1-t": "Microgrids",
     "srv-1-d": "Resilient and autonomous energy systems.",
     "srv-2-t": "Generator Synchronization",
@@ -68,7 +68,21 @@ export const translations = {
     "ftr-s3": "Maintenance",
     "ftr-copy": "  OrangePS Powered by TCC",
     "ftr-p1": "Privacy Policy",
-    "ftr-p2": "Terms of Service"
+    "ftr-p2": "Terms of Service",
+    "prod-title": "Our products",
+    "prod-btn": "More information",
+    "prod-1-t": "Asset Control Panels",
+    "prod-1-d": "Centralized management of various energy sources.",
+    "prod-2-t": "Synchronization Panels",
+    "prod-2-d": "Control and power for centralized generator management.",
+    "prod-3-t": "Transfer Switch Panels",
+    "prod-3-d": "Automatic transfer units for switching energy sources.",
+    "prod-4-t": "Power and Control Panels",
+    "prod-4-d": "Management of switching between local energy sources and the commercial grid.",
+    "prod-5-t": "Generator Rental",
+    "prod-5-d": "Power generation equipment for temporary needs.",
+    "prod-6-t": "Specialized Technical Support",
+    "prod-6-d": "Technical assistance for the operation and management of generation systems."
   },
   es: {
     "nav-sol": "SOLUCIONES",
@@ -90,7 +104,7 @@ export const translations = {
     "hero-m4-v": "15 AÑOS",
     "hero-m4-t": "Experiencia en la Industria",
 
-    "srv-title": "LO QUE <span class=\"text-brand-orange\">HACEMOS</span>",
+    "srv-title": "NUESTRA <span class=\"text-brand-orange\">EXPERIENCIA</span>",
     "srv-1-t": "Microredes",
     "srv-1-d": "Sistemas de energia autonomos y resilientes.",
     "srv-2-t": "Sincronia de Generadores",
@@ -139,6 +153,20 @@ export const translations = {
     "ftr-s3": "Mantenimiento",
     "ftr-copy": "Copyright © 2024 OrangePS Powered by TCC",
     "ftr-p1": "Politica de Privacidad",
-    "ftr-p2": "Terminos de Servicio"
+    "ftr-p2": "Terminos de Servicio",
+    "prod-title": "Nuestros productos",
+    "prod-btn": "Mas informacion",
+    "prod-1-t": "Tableros de Control de Activos",
+    "prod-1-d": "Gestion centralizada de diversas fuentes de energia.",
+    "prod-2-t": "Tableros de Sincronia",
+    "prod-2-d": "Control y potencia para la gestion centralizada de generadores.",
+    "prod-3-t": "Tableros de Transferencia",
+    "prod-3-d": "Unidades de transferencia automatica para conmutacion de fuentes de energia.",
+    "prod-4-t": "Tableros de Potencia y Control",
+    "prod-4-d": "Gestion de la conmutacion entre fuentes de energia locales y la red comercial.",
+    "prod-5-t": "Renta de Generadores",
+    "prod-5-d": "Equipos de generacion de energia para necesidades temporales.",
+    "prod-6-t": "Soporte Tecnico Especializado",
+    "prod-6-d": "Asistencia tecnica para la operacion y gestion de sistemas de generacion."
   }
 };
