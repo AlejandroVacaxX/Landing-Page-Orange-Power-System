@@ -15,7 +15,7 @@ export interface Props {
   'data-i18n-desc'?: string;
 }
 
-const { title, description, imageSrc, 'data-i18n-title': dataI18nTitle, 'data-i18n-desc': dataI18nDesc } = Astro.props;
+const { title, description, 'data-i18n-title': dataI18nTitle, 'data-i18n-desc': dataI18nDesc } = Astro.props;
 ---
 
 <article class="flex flex-col bg-brand-navy border border-brand-light/10 h-full group">
