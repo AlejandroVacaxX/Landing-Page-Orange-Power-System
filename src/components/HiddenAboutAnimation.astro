@@ -1,6 +1,6 @@
 ---
 ---
-<section id="hidden-about-section" data-lenis-prevent="true" class="fixed inset-0 z-[100] bg-[#0B1220] overflow-y-auto hidden opacity-0 transition-opacity duration-500">
+<section id="hidden-about-section" data-lenis-prevent="true" class="fixed inset-0 z-[100] bg-[#0B1220]/85 backdrop-blur-sm overflow-y-auto hidden opacity-0 transition-opacity duration-500">
   
   <!-- Boton de Cierre -->
   <button id="close-hidden-about" class="fixed top-6 right-6 md:top-10 md:right-10 z-[110] text-brand-light hover:text-brand-orange transition-colors focus:outline-none" aria-label="Close modal">
@@ -24,6 +24,15 @@
     <!-- Lienzo Sticky Central -->
     <div class="sticky top-0 w-full h-screen flex items-center justify-center overflow-hidden">
       
+      
+      <!-- Indicador de Scroll -->
+      <div id="scroll-indicator" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center justify-center text-brand-white/80 animate-bounce z-50 transition-opacity duration-300">
+        <span class="text-xs uppercase tracking-widest mb-1 font-semibold">Scroll</span>
+        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </div>
+
       <div class="relative w-full max-w-6xl mx-auto px-4 lg:px-8 h-full flex items-center justify-center">
         
         <!-- SLIDE 1 (Mision y Vision) -->
@@ -182,6 +191,23 @@
 
   if (revealBtn) {
     revealBtn.addEventListener('click', openModal);
+  }
+
+  
+  // Ocultar indicador al hacer scroll
+  const modalScrollTrack = document.getElementById('hidden-about-section');
+  const scrollIndicator = document.getElementById('scroll-indicator');
+  
+  if (modalScrollTrack && scrollIndicator) {
+    modalScrollTrack.addEventListener('scroll', () => {
+      if (modalScrollTrack.scrollTop > 100) {
+        scrollIndicator.classList.add('opacity-0');
+        scrollIndicator.classList.remove('opacity-100');
+      } else {
+        scrollIndicator.classList.add('opacity-100');
+        scrollIndicator.classList.remove('opacity-0');
+      }
+    });
   }
 
   if (closeBtn) {
