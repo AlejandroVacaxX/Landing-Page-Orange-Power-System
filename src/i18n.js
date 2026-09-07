@@ -66,7 +66,7 @@ export const translations = {
     "ftr-s1": "Engineering",
     "ftr-s2": "Rentals",
     "ftr-s3": "Maintenance",
-    "ftr-copy": "Copyright © 2024 OrangePS Powered by TCC",
+    "ftr-copy": "  OrangePS Powered by TCC",
     "ftr-p1": "Privacy Policy",
     "ftr-p2": "Terms of Service"
   },

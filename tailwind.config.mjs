@@ -8,7 +8,7 @@ export default {
           orange: '#F97316',
           navy: '#000000',
           light: '#E5E7EB',
-          white: '#FFFFFF',
+          white: '#ffffff',
         }
       },
       fontFamily: {

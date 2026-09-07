@@ -13,10 +13,10 @@ export interface Props {
 
 const { variant = 'solid', href, className = '' } = Astro.props;
 
-// Clases base para el layout y tipografia
+// clases base para el layout y tipografia
 const baseStyles = 'inline-flex items-center justify-center px-6 py-3 font-semibold transition-colors duration-300';
 
-// Estilos condicionales segun la variante
+// estilos condicionales segun la variante
 const variants = {
   solid: 'bg-brand-orange text-brand-white hover:bg-orange-600',
   outline: 'border-2 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-brand-white',
