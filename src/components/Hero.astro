@@ -1,0 +1,71 @@
+---
+import Button from './ui/Button.astro';
+---
+
+<!-- HERO SECTION: Contenido principal y metricas -->
+<section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex flex-col justify-center min-h-[90vh]">
+  
+  <!-- IMAGEN DE FONDO Y OVERLAY -->
+  <!-- NOTE: z-0 para fondo, object-cover asegura que cubra todo el contenedor sin distorsion -->
+  <div class="absolute inset-0 z-0">
+    <img 
+      src="/images/3.jpeg" 
+      alt="Industrial Power Background" 
+      class="w-full h-full object-cover"
+    />
+    <!-- Overlay oscuro para asegurar contraste de texto blanco -->
+    <div class="absolute inset-0 bg-brand-navy/70"></div>
+  </div>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <!-- NOTE: z-10 para mantener el texto por encima del overlay -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-grow flex flex-col justify-center">
+    
+    <div class="max-w-3xl">
+      <!-- TODO: Ajustar copy H1 si es necesario para coincidir con la imagen -->
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-white leading-tight mb-6">
+        <span data-i18n="hero-title">Powering Industrial <span class="text-brand-orange">Excellence</span></span>
+      </h1>
+      
+      <p class="text-lg sm:text-xl text-brand-light/90 mb-10 max-w-2xl">
+        <span data-i18n="hero-desc">We provide state-of-the-art power solutions, generator rentals, and integration services for critical operations worldwide. Reliable, rapid, and robust.</span>
+      </p>
+      
+      <!-- BOTONES DE ACCION -->
+      <div class="flex flex-col sm:flex-row gap-4">
+        <Button variant="solid" href="#solutions"><span data-i18n="hero-btn1">EXPLORE SOLUTIONS</span></Button>
+        <Button variant="transparent" href="#contact"><span data-i18n="hero-btn2">GET A QUOTE</span></Button>
+      </div>
+    </div>
+  </div>
+
+  <!-- METRICAS (Grid Inferior) -->
+  <!-- NOTE: mt-auto lo empuja hacia abajo, grid responsive (1 col movil, 2 sm, 4 lg) -->
+  <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full mt-20">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 bg-brand-navy/80 backdrop-blur-md border border-brand-light/10 p-8">
+      
+      <div class="text-center md:text-left border-b sm:border-b-0 lg:border-r border-brand-light/10 pb-4 sm:pb-0 pr-0 lg:pr-4">
+        <p class="text-4xl font-bold text-brand-orange mb-1"><span data-i18n="hero-m1-v">500+</span></p>
+        <p class="text-sm text-brand-white uppercase font-semibold"><span data-i18n="hero-m1-t">Projects Delivered</span></p>
+      </div>
+      
+      <div class="text-center md:text-left border-b sm:border-b-0 lg:border-r border-brand-light/10 pb-4 sm:pb-0 lg:px-4">
+        <p class="text-4xl font-bold text-brand-orange mb-1"><span data-i18n="hero-m2-v">24/7</span></p>
+        <p class="text-sm text-brand-white uppercase font-semibold"><span data-i18n="hero-m2-t">Support & Maintenance</span></p>
+      </div>
+      
+      <div class="text-center md:text-left border-b sm:border-b-0 lg:border-r border-brand-light/10 pb-4 sm:pb-0 lg:px-4">
+        <p class="text-4xl font-bold text-brand-orange mb-1"><span data-i18n="hero-m3-v">50 MW</span></p>
+        <p class="text-sm text-brand-white uppercase font-semibold"><span data-i18n="hero-m3-t">Rental Capacity</span></p>
+      </div>
+      
+      <div class="text-center md:text-left lg:pl-4">
+        <p class="text-4xl font-bold text-brand-orange mb-1"><span data-i18n="hero-m4-v">15 YRS</span></p>
+        <p class="text-sm text-brand-white uppercase font-semibold"><span data-i18n="hero-m4-t">Industry Experience</span></p>
+      </div>
+
+    </div>
+  </div>
+
+</section>
+

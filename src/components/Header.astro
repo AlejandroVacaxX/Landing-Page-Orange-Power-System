@@ -1,0 +1,96 @@
+---
+import Button from './ui/Button.astro';
+---
+
+<!-- FIXED NAV: Z-index muy alto para asegurar que este sobre cualquier seccion -->
+<header class="fixed top-0 left-0 w-full z-50 bg-brand-navy/95 backdrop-blur-sm border-b border-brand-light/10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Flexbox para distribuir elementos equitativamente -->
+    <div class="flex justify-between items-center h-20">
+      
+      <!-- LOGO -->
+      <div class="flex-shrink-0 flex items-center">
+        <!-- 2.jpeg: Logo principal sobre fondo oscuro -->
+        <a href="/">
+          <img class="h-10 w-auto object-contain" src="/images/2.jpeg" alt="Orange Power Systems Logo" />
+        </a>
+      </div>
+      
+      <!-- LINKS DESKTOP -->
+      <nav class="hidden md:flex space-x-8 items-center">
+        <a href="#solutions" data-i18n="nav-sol" class="text-sm font-semibold text-brand-white hover:text-brand-orange transition-colors">SOLUTIONS</a>
+        <a href="#industries" data-i18n="nav-ind" class="text-sm font-semibold text-brand-white hover:text-brand-orange transition-colors">INDUSTRIES</a>
+        <a href="#projects" data-i18n="nav-pro" class="text-sm font-semibold text-brand-white hover:text-brand-orange transition-colors">PROJECTS</a>
+        <a href="#about" data-i18n="nav-abt" class="text-sm font-semibold text-brand-white hover:text-brand-orange transition-colors">ABOUT</a>
+      </nav>
+
+      <!-- BOTON CONTACTO Y MENU MOVIL -->
+      <div class="flex items-center space-x-4">
+        <!-- Selector de idioma interactivo -->
+        <button id="lang-toggle" class="hidden md:flex items-center space-x-1 text-sm font-semibold cursor-pointer focus:outline-none" aria-label="Cambiar idioma">
+          <span id="lang-text-en" class="text-brand-orange transition-colors">EN</span>
+          <span class="text-brand-white/30 font-light">|</span>
+          <span id="lang-text-es" class="text-brand-white hover:text-brand-orange transition-colors">ES</span>
+        </button>
+        
+        <Button variant="solid" href="#contact" className="hidden md:inline-flex"><span data-i18n="nav-btn">CONTACT</span></Button>
+        
+        <!-- Hamburguesa para movil -->
+        <!-- TODO: Agregar script JS para togglear visibilidad del menu en movil -->
+        <button type="button" class="md:hidden bg-transparent p-2 rounded-md text-brand-white hover:text-brand-orange focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+          <span class="sr-only">Open main menu</span>
+          <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+</header>
+
+<script>
+  import { translations } from '../i18n.js';
+  
+  const langToggle = document.getElementById('lang-toggle');
+  const textEn = document.getElementById('lang-text-en');
+  const textEs = document.getElementById('lang-text-es');
+  
+  let currentLang = 'en';
+
+  function updateTranslations(lang) {
+    document.querySelectorAll('[data-i18n]').forEach((el) => {
+      const key = el.getAttribute('data-i18n');
+      if (key && translations[lang] && translations[lang][key]) {
+        el.innerHTML = translations[lang][key];
+      }
+    });
+
+    document.querySelectorAll('[data-i18n-ph]').forEach((el) => {
+      const key = el.getAttribute('data-i18n-ph');
+      if (key && translations[lang] && translations[lang][key]) {
+        el.setAttribute('placeholder', translations[lang][key]);
+      }
+    });
+  }
+
+  if (langToggle && textEn && textEs) {
+    langToggle.addEventListener('click', function() {
+      if (currentLang === 'en') {
+        currentLang = 'es';
+        textEn.className = 'text-brand-white hover:text-brand-orange transition-colors';
+        textEs.className = 'text-brand-orange transition-colors';
+        document.documentElement.lang = 'es';
+      } else {
+        currentLang = 'en';
+        textEn.className = 'text-brand-orange transition-colors';
+        textEs.className = 'text-brand-white hover:text-brand-orange transition-colors';
+        document.documentElement.lang = 'en';
+      }
+      updateTranslations(currentLang);
+    });
+
+    // Ejecutar inmediatamente para asegurar que el texto inicial coincida
+    updateTranslations(currentLang);
+  }
+</script>

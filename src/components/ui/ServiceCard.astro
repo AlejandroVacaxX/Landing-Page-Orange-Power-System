@@ -1,0 +1,42 @@
+---
+/**
+ * ServiceCard UI Component
+ * @prop {string} title - Titulo del servicio
+ * @prop {string} description - Descripcion corta
+ * @prop {string} imageSrc - Ruta de la imagen
+ * @prop {string} dataI18nTitle - Key for translating title
+ * @prop {string} dataI18nDesc - Key for translating description
+ */
+export interface Props {
+  title: string;
+  description: string;
+  imageSrc: string;
+  'data-i18n-title'?: string;
+  'data-i18n-desc'?: string;
+}
+
+const { title, description, imageSrc, 'data-i18n-title': dataI18nTitle, 'data-i18n-desc': dataI18nDesc } = Astro.props;
+---
+
+<article class="flex flex-col bg-brand-navy border border-brand-light/10 h-full group">
+  <!-- TODO: Verificar proporciones de imagen en produccion -->
+  <!-- NOTE: overflow-hidden previene que el zoom de la imagen se salga del contenedor -->
+  <div class="relative w-full h-48 overflow-hidden">
+    <img 
+      src={imageSrc} 
+      alt={title} 
+      class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+    />
+  </div>
+  <div class="p-6 flex flex-col flex-grow">
+    <!-- Color de icono heredado del text-brand-orange -->
+    <div class="w-10 h-10 mb-4 text-brand-orange">
+      <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M13 10V3L4 14h7v7l9-11h-7z"/>
+      </svg>
+    </div>
+    <h3 class="text-xl font-bold text-brand-white mb-2"><span data-i18n={dataI18nTitle}>{title}</span></h3>
+    <p class="text-brand-light/80 text-sm flex-grow"><span data-i18n={dataI18nDesc}>{description}</span></p>
+  </div>
+</article>
+

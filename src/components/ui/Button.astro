@@ -1,0 +1,40 @@
+---
+/**
+ * Button UI Component
+ * @prop {string} variant - Estilo del boton: 'solid', 'outline', 'transparent'
+ * @prop {string} href - Si se provee, renderiza un tag <a>
+ * @prop {string} className - Clases adicionales de Tailwind
+ */
+export interface Props {
+  variant?: 'solid' | 'outline' | 'transparent';
+  href?: string;
+  className?: string;
+}
+
+const { variant = 'solid', href, className = '' } = Astro.props;
+
+// Clases base para el layout y tipografia
+const baseStyles = 'inline-flex items-center justify-center px-6 py-3 font-semibold transition-colors duration-300';
+
+// Estilos condicionales segun la variante
+const variants = {
+  solid: 'bg-brand-orange text-brand-white hover:bg-orange-600',
+  outline: 'border-2 border-brand-orange text-brand-orange hover:bg-brand-orange hover:text-brand-white',
+  transparent: 'border-2 border-brand-white text-brand-white hover:bg-brand-white hover:text-brand-navy',
+};
+
+const classes = `${baseStyles} ${variants[variant]} ${className}`;
+---
+
+{
+  href ? (
+    <a href={href} class={classes}>
+      <slot />
+    </a>
+  ) : (
+    <button class={classes}>
+      <slot />
+    </button>
+  )
+}
+

@@ -1,0 +1,6 @@
+## Requisito de Diseño Especial: Animación y Escala en `<ServicesGrid />`
+En la sección de servicios ("Lo que hacemos"), requiero una modificación visual específica para la cuarta tarjeta (la tarjeta correspondiente a "Alquiler" / "Rental Power", que contiene la imagen del contenedor):
+
+1.  **Escala Destacada:** Esta tarjeta debe ser visualmente más grande que el resto de la cuadrícula para denotar jerarquía. Utiliza clases de Tailwind como `scale-110` o ajusta el `col-span` (por ejemplo, que ocupe 2 columnas en pantallas grandes) para que destaque significativamente, manteniendo el diseño responsivo.
+2.  **Animación Estética (Rotación Y):** Aplica una animación de rotación continua, lenta y suave sobre su propio eje Y (estilo 3D/Showcase) para darle un aspecto premium. 
+3.  **Implementación en Tailwind:** Crea una animación personalizada en la configuración de Tailwind (`tailwind.config.mjs` o a través de clases arbitrarias) para una rotación en el eje Y. Ejemplo conceptual: una clase de animación lenta y repetitiva que aplique `transform: rotateY(360deg)`. Asegúrate de usar `perspective` en el contenedor padre para que el efecto 3D se vea profesional y estético.

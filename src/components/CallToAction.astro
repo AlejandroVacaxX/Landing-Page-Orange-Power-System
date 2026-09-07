@@ -1,0 +1,146 @@
+---
+import Button from './ui/Button.astro';
+---
+
+<!-- CALL TO ACTION SECTION: Cierre -->
+<!-- 6.jpeg: Fachada corporativa como fondo -->
+<section id="contact" class="relative py-24 bg-brand-navy border-t border-brand-orange/20">
+  
+  <div class="absolute inset-0 z-0">
+    <img 
+      src="/images/6.jpeg" 
+      alt="Corporate Office" 
+      class="w-full h-full object-cover opacity-30 mix-blend-luminosity"
+    />
+    <!-- Gradiente para que el texto sea legible -->
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/80 to-transparent"></div>
+  </div>
+
+  <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+    
+    <!-- Icono de soporte -->
+    <div class="mx-auto w-16 h-16 bg-brand-orange text-brand-white rounded-full flex items-center justify-center mb-6 shadow-lg shadow-brand-orange/20">
+      <svg class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+    </div>
+
+    <h2 class="text-4xl font-extrabold text-brand-white mb-6 uppercase tracking-wide"><span data-i18n="cta-title">Ready to Power Your Future?</span></h2>
+    
+    <p class="text-xl text-brand-light/90 mb-10 max-w-2xl mx-auto">
+      <span data-i18n="cta-desc">Talk directly with our engineering team today to design the perfect power solution for your next big project.</span>
+    </p>
+    
+    <!-- Boton que abre el modal -->
+    <button id="open-contact-modal" class="inline-flex items-center justify-center px-10 py-4 text-lg font-semibold transition-colors duration-300 bg-brand-orange text-brand-white hover:bg-orange-600">
+      <span data-i18n="cta-btn">CONTACT OUR EXPERTS</span>
+    </button>
+    
+  </div>
+</section>
+
+<!-- MODAL DE CONTACTO -->
+<dialog id="contact-modal" class="m-auto w-[95%] max-w-5xl p-0 rounded-2xl shadow-2xl bg-transparent backdrop:bg-brand-navy/80 backdrop:backdrop-blur-sm overflow-hidden border border-brand-navy/10">
+  
+  <!-- Contenedor del modal -->
+  <div class="relative bg-brand-light w-full flex flex-col md:flex-row">
+    
+    <!-- Boton cerrar -->
+    <button id="close-contact-modal" class="absolute top-4 right-4 text-brand-navy/50 hover:text-brand-orange focus:outline-none z-10" aria-label="Close modal">
+      <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <!-- COLUMNA IZQUIERDA: Info de contacto -->
+    <div class="w-full md:w-1/2 p-8 md:p-12 bg-brand-light text-brand-navy flex flex-col justify-center border-b md:border-b-0 md:border-r border-brand-navy/10">
+      <h3 class="text-3xl font-extrabold text-brand-navy/80 mb-10"><span data-i18n="cta-modal-title">Contactanos</span></h3>
+      
+      <!-- 4.jpeg: Logo sobre fondo claro para interior de modales -->
+      <img src="/images/4.jpeg" alt="Orange Power Systems" class="h-16 w-auto object-contain mb-10 self-start" />
+      
+      <h4 class="text-brand-orange font-bold text-lg mb-6"><span data-i18n="cta-modal-info">Informacion de contacto</span></h4>
+      
+      <div class="space-y-5 mb-10 text-brand-navy/70 text-sm">
+        <div class="flex items-start">
+          <svg class="w-5 h-5 mr-3 text-brand-navy/50 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+          <p>Cto. Circunvalacion Pte. No. 149 Int. B, Ciudad Satelite, Naucalpan, Edo. Mex. Mexico, CP. 53100</p>
+        </div>
+        
+        <div class="flex items-center">
+          <svg class="w-5 h-5 mr-3 text-brand-navy/50 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+          <p>+52 5593376552</p>
+        </div>
+        
+        <div class="flex items-center">
+          <svg class="w-5 h-5 mr-3 text-brand-navy/50 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+          <p>contacto@orange-ps.com</p>
+        </div>
+      </div>
+      
+      <!-- Boton WhatsApp similar al diseño -->
+      <a href="https://wa.me/525593376552" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-3 bg-brand-navy/30 text-brand-navy font-semibold rounded-full hover:bg-brand-navy/40 transition-colors w-max shadow-sm text-sm">
+        WhatsApp
+      </a>
+    </div>
+
+    <!-- COLUMNA DERECHA: Formulario -->
+    <div class="w-full md:w-1/2 p-8 md:p-12 bg-brand-white flex flex-col justify-center">
+      <h3 class="text-3xl font-extrabold text-brand-navy/80 mb-8"><span data-i18n="cta-modal-form">Envianos un mensaje</span></h3>
+      
+      <form class="space-y-4" onsubmit="event.preventDefault();">
+        <div class="flex flex-col sm:flex-row gap-4">
+          <div class="w-full">
+            <label for="firstName" class="sr-only">Nombre</label>
+            <input type="text" id="firstName" placeholder="First Name" data-i18n-ph="form-ph-name" class="w-full px-4 py-3 rounded-md bg-brand-light/30 border border-brand-light/50 text-brand-navy placeholder-brand-navy/40 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-colors" required>
+          </div>
+          <div class="w-full">
+            <label for="lastName" class="sr-only">Apellido</label>
+            <input type="text" id="lastName" placeholder="Last Name" data-i18n-ph="form-ph-last" class="w-full px-4 py-3 rounded-md bg-brand-light/30 border border-brand-light/50 text-brand-navy placeholder-brand-navy/40 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-colors" required>
+          </div>
+        </div>
+        
+        <div>
+          <label for="email" class="sr-only">Email</label>
+          <input type="email" id="email" placeholder="Email" class="w-full px-4 py-3 rounded-md bg-brand-light/30 border border-brand-light/50 text-brand-navy placeholder-brand-navy/40 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-colors" required>
+        </div>
+        
+        <div>
+          <label for="message" class="sr-only">Deja tu mensaje</label>
+          <textarea id="message" rows="5" placeholder="Leave your message" data-i18n-ph="form-ph-msg" class="w-full px-4 py-3 rounded-md bg-brand-light/30 border border-brand-light/50 text-brand-navy placeholder-brand-navy/40 focus:outline-none focus:border-brand-orange focus:ring-1 focus:ring-brand-orange transition-colors resize-none" required></textarea>
+        </div>
+        
+        <button type="submit" class="w-full py-3 mt-4 bg-brand-navy/40 text-brand-navy font-semibold rounded-full hover:bg-brand-navy hover:text-brand-white transition-colors duration-300">
+          <span data-i18n="cta-modal-btn">Enviar mensaje</span>
+        </button>
+      </form>
+    </div>
+
+  </div>
+</dialog>
+
+<script>
+  const openBtn = document.getElementById('open-contact-modal');
+  const closeBtn = document.getElementById('close-contact-modal');
+  const modal = document.getElementById('contact-modal');
+
+  if (openBtn && closeBtn && modal) {
+    openBtn.addEventListener('click', function() {
+      if (typeof modal.showModal === 'function') {
+        modal.showModal();
+      }
+    });
+
+    closeBtn.addEventListener('click', function() {
+      if (typeof modal.close === 'function') {
+        modal.close();
+      }
+    });
+
+    modal.addEventListener('click', function(e) {
+      if (e.target === modal && typeof modal.close === 'function') {
+        modal.close();
+      }
+    });
+  }
+</script>

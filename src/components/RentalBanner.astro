@@ -1,0 +1,74 @@
+---
+import Button from './ui/Button.astro';
+---
+
+<!-- RENTAL BANNER SECTION: Alquiler de equipos -->
+<!-- NOTE: bg-brand-light/5 para separar visualmente esta seccion del grid oscuro anterior -->
+<section class="py-24 bg-brand-navy border-t border-brand-light/10 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    
+    <!-- SPLIT SCREEN LAYOUT EN DESKTOP -->
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      
+      <!-- CONTENIDO TEXTUAL (Izquierda) -->
+      <div class="w-full lg:w-1/2">
+        <h2 class="text-3xl md:text-4xl font-bold text-brand-white mb-6">
+          <span data-i18n="rnt-title">RAPID DEPLOYMENT <span class="text-brand-orange">RENTAL</span></span>
+        </h2>
+        <p class="text-brand-light/90 text-lg mb-8">
+          <span data-i18n="rnt-desc">When downtime is not an option, our industrial generator rental fleet is ready to deploy. We provide fully tested, reliable power solutions tailored to your temporary or emergency needs.</span>
+        </p>
+        
+        <!-- CARACTERISTICAS -->
+        <div class="space-y-4 mb-10">
+          
+          <div class="flex items-start">
+            <div class="flex-shrink-0 mt-1 text-brand-orange">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <p class="ml-3 text-brand-white text-lg"><span data-i18n="rnt-l1">Capacities ranging from 500kW to Multi-Megawatt</span></p>
+          </div>
+          
+          <div class="flex items-start">
+            <div class="flex-shrink-0 mt-1 text-brand-orange">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <p class="ml-3 text-brand-white text-lg"><span data-i18n="rnt-l2">Containerized solutions for harsh environments</span></p>
+          </div>
+          
+          <div class="flex items-start">
+            <div class="flex-shrink-0 mt-1 text-brand-orange">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <p class="ml-3 text-brand-white text-lg"><span data-i18n="rnt-l3">24/7 technical support and rapid response times</span></p>
+          </div>
+          
+        </div>
+        
+        <Button variant="solid" href="#contact"><span data-i18n="rnt-btn">VIEW RENTAL INVENTORY</span></Button>
+      </div>
+      
+      <!-- IMAGEN DESTACADA (Derecha) -->
+      <div class="w-full lg:w-1/2">
+        <!-- 7.jpeg: Fotografia de contenedor de generador -->
+        <div class="relative">
+          <!-- Decoracion de borde naranja -->
+          <div class="absolute -inset-4 border-2 border-brand-orange/30 transform translate-x-4 translate-y-4 hidden md:block"></div>
+          <img 
+            src="/images/7.jpeg" 
+            alt="Industrial Generator Container" 
+            class="relative w-full h-auto object-cover shadow-2xl border border-brand-light/10"
+          />
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
