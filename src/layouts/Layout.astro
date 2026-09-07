@@ -19,6 +19,32 @@ const { title } = Astro.props;
   <!-- NOTE: pb-32 asegura espacio para que el StickyCTA no tape el final del Footer -->
   <body class="bg-brand-navy text-brand-light font-sans antialiased min-h-screen flex flex-col pb-28 md:pb-32">
     <slot />
+
+    <script>
+      import Lenis from '@studio-freight/lenis';
+      import gsap from 'gsap';
+      import ScrollTrigger from 'gsap/ScrollTrigger';
+
+      // Configurar Lenis para smooth scroll global
+      const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        orientation: 'vertical',
+        gestureOrientation: 'vertical',
+        smoothWheel: true,
+        wheelMultiplier: 1,
+        touchMultiplier: 2,
+      });
+
+      // Sincronizar Lenis con GSAP ScrollTrigger
+      lenis.on('scroll', ScrollTrigger.update);
+
+      gsap.ticker.add((time) => {
+        lenis.raf(time * 1000);
+      });
+
+      gsap.ticker.lagSmoothing(0);
+    </script>
   </body>
 </html>
 
