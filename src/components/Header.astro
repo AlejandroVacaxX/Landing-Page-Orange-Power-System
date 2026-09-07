@@ -58,7 +58,7 @@ import Button from './ui/Button.astro';
   
   let currentLang = 'en';
 
-  function updateTranslations(lang) {
+  function updateTranslations(lang: "en" | "es") {
     document.querySelectorAll('[data-i18n]').forEach((el) => {
       const key = el.getAttribute('data-i18n');
       if (key && translations[lang] && translations[lang][key]) {
