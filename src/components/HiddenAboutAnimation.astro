@@ -1,6 +1,6 @@
 ---
 ---
-<section id="hidden-about-section" class="fixed inset-0 z-[100] bg-[#0B1220] overflow-y-auto hidden opacity-0 transition-opacity duration-500">
+<section id="hidden-about-section" data-lenis-prevent="true" class="fixed inset-0 z-[100] bg-[#0B1220] overflow-y-auto hidden opacity-0 transition-opacity duration-500">
   
   <!-- Boton de Cierre -->
   <button id="close-hidden-about" class="fixed top-6 right-6 md:top-10 md:right-10 z-[110] text-brand-light hover:text-brand-orange transition-colors focus:outline-none" aria-label="Close modal">
@@ -162,7 +162,7 @@
     
     // Disparar evento para forzar traducción
     const currentLang = document.documentElement.lang || 'en';
-    if(window.updateTranslationsGlobally) window.updateTranslationsGlobally(currentLang);
+    
   }
 
   function closeModal() {
