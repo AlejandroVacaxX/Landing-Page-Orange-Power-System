@@ -5,18 +5,6 @@ import Button from './ui/Button.astro';
 <!-- HERO SECTION: Contenido principal y metricas -->
 <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden flex flex-col justify-center min-h-[90vh]">
   
-  <!-- IMAGEN DE FONDO Y OVERLAY -->
-  <!-- NOTE: z-0 para fondo, object-cover asegura que cubra todo el contenedor sin distorsion -->
-  <div class="absolute inset-0 z-0">
-    <img 
-      src="/images/3.jpeg" 
-      alt="Industrial Power Background" 
-      class="w-full h-full object-cover"
-    />
-    <!-- Overlay oscuro para asegurar contraste de texto blanco -->
-    <div class="absolute inset-0 bg-brand-navy/70"></div>
-  </div>
-
   <!-- CONTENIDO PRINCIPAL -->
   <!-- NOTE: z-10 para mantener el texto por encima del overlay -->
   <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex-grow flex flex-col justify-center">

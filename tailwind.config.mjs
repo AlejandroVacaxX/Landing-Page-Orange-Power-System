@@ -6,7 +6,7 @@ export default {
       colors: {
         brand: {
           orange: '#F97316',
-          navy: '#0B1220',
+          navy: '#000000',
           light: '#E5E7EB',
           white: '#FFFFFF',
         }
