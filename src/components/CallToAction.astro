@@ -3,7 +3,18 @@
 
 <!-- CALL TO ACTION SECTION: Cierre -->
 <!-- 6.jpeg: Fachada corporativa como fondo -->
-<section id="contact" class="relative py-24 bg-brand-navy border-t border-brand-orange/20">
+<section id="contact" class="relative py-24 border-t border-brand-orange/20 overflow-hidden">
+
+  <!-- BACKGROUND SLIDER CTA -->
+  <div class="absolute inset-0 z-0">
+    <div class="relative w-full h-full">
+      <img src="/images/field-work-1.jpg" class="cta-slider-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-100" alt="Field work 1" />
+      <img src="/images/field-work-2.jpg" class="cta-slider-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" alt="Field work 2" />
+      <img src="/images/field-work-3.jpg" class="cta-slider-img absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 opacity-0" alt="Field work 3" />
+    </div>
+    <!-- Overlay oscuro -->
+    <div class="absolute inset-0 bg-[#0B1220]/80"></div>
+  </div>
 
   <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
     
@@ -134,4 +145,18 @@
       }
     });
   }
+
+  // Slider CTA Background
+  const ctaImages = document.querySelectorAll(".cta-slider-img");
+  let ctaIndex = 0;
+  if (ctaImages.length > 0) {
+    setInterval(() => {
+      ctaImages[ctaIndex].classList.remove("opacity-100");
+      ctaImages[ctaIndex].classList.add("opacity-0");
+      ctaIndex = (ctaIndex + 1) % ctaImages.length;
+      ctaImages[ctaIndex].classList.remove("opacity-0");
+      ctaImages[ctaIndex].classList.add("opacity-100");
+    }, 3000);
+  }
+
 </script>
